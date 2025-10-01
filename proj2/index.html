@@ -27,8 +27,8 @@
 	</head>
 	<body>
 		<div class="container">
-		<h1>CS184/284A Spring 2025 Homework 2 Write-Up</h1>
-		<div style="text-align: center;">Names: Wesley Chang and Stephane Finot</div>
+		<h1>Mesh Operations</h1>
+		<div style="text-align: center;">Names: Stephane Finot</div>
 
 		<br>
 
@@ -180,7 +180,7 @@
 					</tr>
 				</table>
 			</div>
-			<h3>Part 5 Extra Credit: Boundary edge splits</h3>
+			<h3>Part 5: Boundary edge splits</h3>
 			<p>To account for boundary edges, we first check if the edge is on a boundary before performing any operations. If we are splitting a boundary edge, we only create 2 new edges, 4 new halfedges, 1 new face, and a new vertex. Next, we reassign everything similarly to a non-boundary edge while omitting the boundary side of the edge. One issue we faced was figuring out the Halfedge implementation, as half edges do not have a boundary attribute. We found that we had to store the original half edge's face and assign that as the face of the newly created half edges to ensure the isBoundary() function returns true for future operations. After all assignments have been completed, we compute and assign the vertex's position and return the vertexIter.</p>
 
 			<div style="display: flex; flex-direction: column; align-items: center;">
@@ -296,7 +296,7 @@
 					</tr>
 				</table>
 			</div>
-			<h3>Part 6: Extra Credit Boundary Edge Split</h3>
+			<h3>Part 6: Boundary Edge Split</h3>
 			<p>We implemented boundary support for mesh upsampling via loop subdivision. We implemented it via updating the vertex positions given that they were boundary vertices, and then given that edges were on the boundary, implemented new vertex weighting for e->newPosition.</p>
 
 			<div style="display: flex; flex-direction: column; align-items: center;">
